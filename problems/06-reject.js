@@ -20,7 +20,7 @@ console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth'
 *******************************************************************************/
 
 let reject = function() {
-let res = [];
+let res1 = [];
 
 for ( let i = 0; i < array.length; i++){
     let el = arr[i];
@@ -28,17 +28,17 @@ for ( let i = 0; i < array.length; i++){
         res.push(el)
     }
 }
-return res;
-
+return res1;
 };
+
+let res = arr.filter(function (ele) {
+    return !cb(ele);
+})
+
 
 let isEven = function(n) {
     return n % 2 === 0;
 };
-
-
-
-
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 module.exports = reject;
