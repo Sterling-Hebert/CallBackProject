@@ -10,9 +10,7 @@ problem.
 
 Examples:
 
-let isEven = function(n) {
-    return n % 2 === 0;
-};
+
 console.log(reject([7, 8, 5, 6, 12, 11], isEven)); // [ 7, 5, 11 ]
 
 let hasA = function(s) {
@@ -22,9 +20,21 @@ console.log(reject(['breadth', 'GRAPH', 'depth', 'height'], hasA)); // [ 'depth'
 *******************************************************************************/
 
 let reject = function() {
+let res = [];
+
+for ( let i = 0; i < array.length; i++){
+    let el = arr[i];
+    if(!cb(el)){
+        res.push(el)
+    }
+}
+return res;
 
 };
 
+let isEven = function(n) {
+    return n % 2 === 0;
+};
 
 
 
