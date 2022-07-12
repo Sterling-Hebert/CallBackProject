@@ -16,8 +16,13 @@ let result2 = myMap(['run', 'Forrest'], function (el) {
 console.log(result2);   // [ 'RUN!', 'FORREST!' ]
 *******************************************************************************/
 
-let myMap = function() {
-
+let myMap = function(arr, cb) {
+let arr1 = [];
+for (let values of arr){
+    let callback = cb(values)
+    arr1.push(callback)
+}
+return arr1
 };
 
 
