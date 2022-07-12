@@ -23,17 +23,18 @@ let myFilter = function(arr, cb) {
 
     let newArr = [];
 
-for (let el of arr){
-    cb(el) ? newArr.push(cb(el)) : null
+//for (let el of arr){
+  //  cb(el) ? newArr.push(el) : null
+//}
 
+for ( let i = 0; i < arr.length; i++){
+    let ele = arr[i];
+
+    if(cb(ele)){
+        newArr.push(ele)
+    }
 }
-console.log(arr)
-
     return newArr;
-
-
-
-
 };
 
 
