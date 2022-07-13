@@ -40,10 +40,28 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 - Explain how you are using both of the callbacks in the function.
 - What do you expect each callback function to be returning?
 - How many times are you calling each callback function?
+
+Write a function `selectiveMap` that accepts an array and two callbacks as arguments.
+The function should return a new array where elements are replaced with the results
+of calling the second callback on the element only if calling the first callback
+on the element results in true. If calling the first callback on an element results
+in false, then the element should not be changed in the new array.
 *******************************************************************************/
 
-let selectiveMap = function() {
+let selectiveMap = function(arr, cb1, cb2) {
+let newArr = [];
 
+for (let el of arr){
+    if(cb1(el)){
+        newArr.push(cb2(el))
+    }else{
+        newArr.push(el)
+    }
+}
+
+
+
+return newArr;
 };
 
 
