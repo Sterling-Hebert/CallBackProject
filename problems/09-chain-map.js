@@ -39,8 +39,12 @@ for (let i = 0; i < cbs.length; i++){
 return newVal;
 };
 
-
-
+//
+// cbs.forEach(function(cb, i)){
+ //   newVal = cb(newVal)
+//})
+//return newVal;
+//}
 
 
 
