@@ -31,11 +31,12 @@ becomes the result of passing the word to the callback.
 
 let sentenceMapper = function(sentence, cb) {
 let newSent = sentence.split(" ");
+let newNewSent = [];
 for (let i = 0; i < newSent.length; i++){
     let word = newSent[i];
-    newSent.push(cb(word));
+    newNewSent.push(cb(word));
 }
-return newSent.join(" ");
+return newNewSent.join(" ");
 
 };
 
