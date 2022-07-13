@@ -55,11 +55,10 @@ for (let el of arr){
     if(cb1(el)){
         newArr.push(cb2(el))
     }else{
-        newArr.push(el)
+        newArr.push((el))
     }
+
 }
-
-
 
 return newArr;
 };
