@@ -29,10 +29,26 @@ console.log(
   xorSelect(["art", "academy", "app", "cat", "buttery"], longString, startsA)
 );
 // [ 'art', 'app', 'buttery' ]
+
+Write a function `xorSelect` that accepts an array and two callback as arguments.
+The function should return a new array containing elements of the original array
+that result in true when passed in one of the callbacks, but not both.
+
 *******************************************************************************/
 
-let xorSelect = function() {
+let xorSelect = function(arr, cb1, cb2) {
+  let newArr = [];
 
+for ( let i = 0; i < arr.length; i++){
+
+    let ele = arr[i];
+
+  if(((cb1(ele) === true) || (cb2(ele) === true)) && !((cb1(ele) === true) && (cb2(ele) === true)))
+      {
+    newArr.push(ele)
+      }
+}
+  return newArr;
 };
 
 

@@ -1,7 +1,7 @@
 /*******************************************************************************
- 
+
  Examples:
- 
+
  let cipher1 = {
      ly: function(word) {
          return word.slice(0, -1) + 'ee';
@@ -12,7 +12,7 @@
     };
     console.log(suffixCipher('quietly and gently visualize', cipher1));
     // quietlee and gentlee visualizer
-    
+
     let cipher2 = {
         tal: function(word) {
             return word.toUpperCase();
@@ -31,9 +31,41 @@
     ends with. If the word does not end in any of the suffix keys, then it should not
     be modified. You can assume that only one suffix of the object will match a word.
     *******************************************************************************/
-   
-   let suffixCipher = function(str, obj) {
-    console.log(obj)
+
+   let suffixCipher = function(sentString, obj) {
+    let words = sentString.split(" ");
+    let keys = Object.keys(obj);
+    let res = words.map(function(word){
+        for (let i = 0; i < keys.length; i++){
+            let key = keys[i]
+
+            if( word.endsWith(key) ){
+                let func = obj[key]
+               return func(word)
+            }
+        }
+        return word;
+    });
+
+    // for (let i = 0; i < words.length; i++){
+    //     let word =words[i];
+
+    //     for (let j = 0; j < keys.length; j++){
+    //         let key = keys[j]
+
+    //         if(word.endsWith(key)){
+    //             let func = obj[key](word)
+    //             res.push(func(word))
+    //             break;
+    //         }else{
+    //             res.push(word)
+    //             break;
+    //         }
+    //     }
+    // }
+
+
+    return res.join(" ");
 };
 
 
